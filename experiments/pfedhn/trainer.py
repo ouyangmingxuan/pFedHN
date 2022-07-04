@@ -1,7 +1,3 @@
-from experiments.pfedhn.models import CNNHyper, CNNTarget
-from experiments.pfedhn.node import BaseNodes
-from experiments.utils import get_device, set_logger, set_seed, str2bool
-
 import argparse
 import json
 import logging
@@ -14,8 +10,9 @@ import torch
 import torch.utils.data
 from tqdm import trange
 
-
-
+from experiments.pfedhn.models import CNNHyper, CNNTarget
+from experiments.pfedhn.node import BaseNodes
+from experiments.utils import get_device, set_logger, set_seed, str2bool
 
 def eval_model(nodes, num_nodes, hnet, net, criteria, device, split):
     curr_results = evaluate(nodes, num_nodes, hnet, net, criteria, device, split=split)
